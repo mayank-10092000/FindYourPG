@@ -1,0 +1,102 @@
+<style>
+	.search-btn {
+		background-color: #fe424d;
+		color: #fff;
+		border-radius: 25px;
+		padding: 0 1rem;
+	}
+	.search-btn:hover {
+		background-color: #fe424d;
+		color: #fff;
+	}
+	.search-btn i {
+		display: inline;
+		margin-right: 0.5rem;
+	}
+	.search-input {
+		border-radius: 25px;
+		padding: 0.5rem 3rem;
+	}
+
+	@media screen and (max-width: 767px) {
+		.nav-menu {
+			background: #fff;
+			padding: 1rem;
+			z-index: 100;
+			width: 100%;
+			height: 100%;
+			/* position: absolute;
+			top: 5rem;
+			left: 0; */
+		}
+		.navbar-nav {
+			flex-direction: column;
+			align-items: center;
+		}
+		.nav-search {
+			flex-direction: column;
+			align-items: center;
+			padding: 1rem;
+		}
+		.search-input {
+			text-align: center;
+			margin-bottom: 1rem;
+			padding: 0.5rem 1.75rem;
+		}
+		.search-btn {
+			width: 60%;
+			padding: 0.5rem;
+		}
+	}
+	@media screen and (max-width: 812px) {
+		.search-input {
+			padding: 0.5rem 1.5rem;
+		}
+	}
+</style>
+
+<nav class="navbar navbar-expand-md bg-body-light border-bottom stick-top">
+	<div class="container-fluid">
+		<a class="navbar-brand" href="/listings">
+			<img
+			  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPAw1KkGTDTqHgvDt3HI_23B2hteakfiT9Bg&s"
+			  alt="FindYourPG Logo"
+			  height="35"
+			  width="35"
+		  /></a>
+		<button
+			class="navbar-toggler"
+			type="button"
+			data-bs-toggle="collapse"
+			data-bs-target="#navbarNavAltMarkup"
+		>
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse nav-menu" id="navbarNavAltMarkup">
+			<div class="navbar-nav">
+				<a class="nav-link" href="/listings">Explore</a>
+				<a class="nav-link" href="/listings/new">list your PG</a>
+			</div>
+			<div class="navbar-nav ms-auto">
+				<form class="d-flex nav-search" role="search">
+					<input
+						class="form-control me-2 search-input"
+						type="search"
+						placeholder="Search Destinations"
+					/>
+					<button class="btn search-btn" type="submit">
+						<i class="fa-solid fa-magnifying-glass"></i>Search
+					</button>
+				</form>
+			</div>
+			<div class="navbar-nav ms-auto">
+				<% if (!currUser){ %>
+				<a class="nav-link" href="/signup"><b>SignUp</b></a>
+				<a class="nav-link" href="/login"><b>Login</b></a>
+				<% } %> <% if (currUser){ %>
+				<a class="nav-link" href="/logout">Logout </a>
+				<% } %>
+			</div>
+		</div>
+	</div>
+</nav>
